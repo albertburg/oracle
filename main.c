@@ -70,9 +70,10 @@ int main(void) {
     srand(time(NULL) ^ getpid()); //seeds rng 
     system("clear"); //clears screen using bash script (only works on linux)
     sleep(1); //pauses for a second 
-    for(z = 0; z <= 255; z++){
+    while(true){
 		gen();
 		sleep(1);
+		z++;
 	}
     return 0;
 }   

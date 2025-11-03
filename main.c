@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include <unistd.h>
-
+//each row has five words in them, so just multiply the number of rows by five (except row 49 which only has two, so 5*48+2
 char words[242][30] = {
     "Shine", "Dick", "Severance", "Apple", "Friend", //1
     "Jack", "Is", "Albert", "Jacob", "Moses", //2
@@ -53,27 +53,31 @@ char words[242][30] = {
     "Tower", "Play", "Station", "Walls", "Alpha", //46
     "Moron", "Lock", "Fight", "Run", "One", //47
     "Control", "Underground", "Sun", "Enemy", "Team", //48
-    "Cat", "Dog" //49
+    "Cat", "Dog" //49 
 };
 
 
-int z;
-int min = 0;
-int max = 219;
+int z; //not x or i
+int min = 0; //minimum words
+int max = 219; //maximum words (don't know if they are up to date)
 
 void gen(void) {
     int rir = (rand() % (max - min + 1)) + min;
-    printf("%s [%d]\n", words[rir], z);
+    printf("%s [%d]\n", words[rir], z); //easy generator function so no need for boilerplate (looking at you java)
 }
 
 int main(void) {
-    srand(time(NULL) ^ getpid());;
-    system("clear");
-    sleep(1);
-    while(true) {
-        gen();
-	z++;
-	sleep(1);
+    srand(time(NULL) ^ getpid()); //seeds rng 
+    system("clear"); //clears screen using bash script (only works on linux)
+    sleep(1); //pauses for a second 
+    for(z = 0; z <= 255; z++) { //two versions of this. the one in main branch is the for loop aka finite version. for the infinite one, see the other branch
+		gen();
+	    sleep(1);
     }
     return 0;
-}
+}   
+//      gen();
+//      sleep(1); 
+//  }   
+//  return 0;
+//}

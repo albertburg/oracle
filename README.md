@@ -37,10 +37,14 @@ I really only developed and planned for this to be run on linux.
 
 <img width="1600" height="900" alt="Screenshot from 2025-11-06 19-24-46" src="https://github.com/user-attachments/assets/eada02fc-d5ca-4e47-b84e-2e5ce8e82b6f" />
 
-**Since the code is FOSS, you can update and tinker whatever you want with it (just be sure if you plan to publish at least say where you got it from)**
 
 
-## Windows install coming soon
 
+## Statement regarding use and credits.
 
+All of the source code written here was programmed, compiled, and tested by albertburg. The 'oracle' source code has no affiliation with the following; Oracle Corporation, Oracle Database, 
+the 'Java' programming language, Java Runtime Envoirnment, or the Java Virtual Machine. This source code was written in the C programming language. During testing the source code was
+compiled using the GNU Compiler Collection.
+
+ 
 

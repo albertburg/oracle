@@ -8,9 +8,7 @@
 int z;
 int x;
 int h;
-char b[];
-char override[] = "override";
-char abort[] = "abort";
+int f;
 int min = 0;
 int max = 242;
 
@@ -30,18 +28,18 @@ void genlist(void) {
 }
 
 void geninfinite(void) {
-    printf("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING\n");
-    printf("ARE YOU SURE YOU WANT TO DO THIS? THE PROGRAM WILL NOT STOP ON ITS OWN AND WILL REQUIRE A FORCE SHUTDOWN\n");
-    printf("In order to proceed, type the word 'override', in order to go back, type the word 'abort'\n");
-    scanf("%s", b);
-    if (strcmp(override, b){ 
-        while(true) 
-	    gen();
-	    z++;
-	    sleep(1);
-	}
+    printf("Warning! If you go through with this the program will NOT close on itself,\n and will require a manual intervention.\n");
+    printf("Continue? [y/n]\n");
+    printf(">");
+    scanf(" %c", f);
+    if (f == 'Y' || f == 'y') {
+        gen();
+	sleep(1);
+    }else if (f == 'N' || f == 'n') {
+        printf("The program will now close.\n");
+    }
+
 }
-    
 
 
 
@@ -53,6 +51,7 @@ int main(void) {
     printf("Select a mode to get started\n");
     printf("1. Generate List\n");
     printf("2. Generate Infinite\n");
+    printf(">");
     scanf("%d", &x);
     if (x == 1) {
         genlist();

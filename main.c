@@ -18,7 +18,7 @@ void gen(void) {
     printf("%s [%d]\n", words[rir], z);
 }
 void genlist(void) {
-    printf("Select amount you want to generate\n");
+    printf("Enter amount you want to generate\n>");
     scanf("%d", &h);
     for (z = 1; z <= h; z++){
         gen();
@@ -31,10 +31,13 @@ void geninfinite(void) {
     printf("Warning! If you go through with this the program will NOT close on itself,\n and will require a manual intervention.\n");
     printf("Continue? [y/n]\n");
     printf(">");
-    scanf(" %c", f);
+    scanf(" %c", &f);
     if (f == 'Y' || f == 'y') {
-        gen();
-	sleep(1);
+        while(true){
+		gen();
+	        sleep(1);
+		z++;
+	}
     }else if (f == 'N' || f == 'n') {
         printf("The program will now close.\n");
     }
